@@ -1,4 +1,3 @@
-import axios from "axios";
 import { fetchArticles } from "../../../api";
 import { useEffect, useState } from "react";
 import ArticleCard from "./ArticleCard";
@@ -10,7 +9,6 @@ function ArticleList() {
       setArticles(articlesdata);
     });
   }, []);
-  console.log(articles);
 
   return (
     <>
