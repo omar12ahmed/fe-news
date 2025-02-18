@@ -10,14 +10,15 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <div>
+      <Navbarr />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/articles" element={<AllArticles />} />
         <Route path="/topics" element={<p>topics</p>} />
         <Route path="/users" element={<p>Users</p>} />
       </Routes>
-    </>
+    </div>
   );
 }
 
