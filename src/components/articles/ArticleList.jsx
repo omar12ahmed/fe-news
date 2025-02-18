@@ -1,6 +1,7 @@
 import { fetchArticles } from "../../../api";
 import { useEffect, useState } from "react";
 import ArticleCard from "./ArticleCard";
+import SingleArticle from "./SingleArticle";
 
 function ArticleList() {
   const [articles, setArticles] = useState([]);
@@ -11,7 +12,6 @@ function ArticleList() {
       .then((articlesdata) => {
         setArticles(articlesdata);
         setIsLoading(false);
-        console.log(articlesdata);
       })
       .catch((err) => {
         console.log(err);
@@ -29,6 +29,7 @@ function ArticleList() {
           return <ArticleCard key={article.article_id} article={article} />;
         })}
       </ul>
+      <SingleArticle article_id={articles.article_id} />
     </>
   );
 }
