@@ -1,15 +1,9 @@
-function ArticleCard({ articles }) {
+function ArticleCard({ article }) {
   return (
-    <ul>
-      {articles.map((article, i) => {
-        return (
-          <div key={i} style={{ border: "solid black 2px", marginTop: "40px" }}>
-            <h3>{article.title}</h3>
-            <p>{article.author}</p>
-          </div>
-        );
-      })}
-    </ul>
+    <div style={{ border: "solid black 2px", marginTop: "40px" }}>
+      <h3>{article.title}</h3>
+      <p>{article.author}</p>
+    </div>
   );
 }
 

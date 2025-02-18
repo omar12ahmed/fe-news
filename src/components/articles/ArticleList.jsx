@@ -7,12 +7,17 @@ function ArticleList() {
   useEffect(() => {
     fetchArticles().then((articlesdata) => {
       setArticles(articlesdata);
+      console.log(articlesdata);
     });
   }, []);
 
   return (
     <>
-      <ArticleCard articles={articles} />
+      <ul>
+        {articles.map((article) => {
+          return <ArticleCard key={article.article_id} article={article} />;
+        })}
+      </ul>
     </>
   );
 }
