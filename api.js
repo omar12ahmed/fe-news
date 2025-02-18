@@ -11,12 +11,7 @@ export const fetchArticles = () => {
 };
 
 export const fetchSingleArticle = (article_id) => {
-  return ncApi
-    .get(`/articles/${article_id}`)
-    .then((response) => {
-      return response.data.article;
-    })
-    .catch((err) => {
-      throw err;
-    });
+  return ncApi.get(`/articles/${article_id}`).then((response) => {
+    return response.data.article;
+  });
 };
