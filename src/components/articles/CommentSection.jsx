@@ -9,7 +9,6 @@ function CommentSection(article_id) {
   useEffect(() => {
     fetchCommentArticle(id).then((comments) => {
       setComments(comments);
-      console.log(comments);
     });
   }, [id]);
 
