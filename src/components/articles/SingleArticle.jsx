@@ -10,7 +10,6 @@ function SingleArticle() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (!article_id) return undefined;
     fetchSingleArticle(article_id).then((data) => {
       setIsArticle(data);
       setIsLoading(false);

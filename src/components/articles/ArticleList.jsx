@@ -29,7 +29,6 @@ function ArticleList() {
           return <ArticleCard key={article.article_id} article={article} />;
         })}
       </ul>
-      <SingleArticle article_id={articles.article_id} />
     </>
   );
 }

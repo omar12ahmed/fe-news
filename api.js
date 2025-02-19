@@ -21,3 +21,9 @@ export const fetchCommentArticle = (article_id) => {
     return response.data.comments;
   });
 };
+
+export const patchVotes = (article_id, inc_votes) => {
+  return ncApi.patch(`/articles/${article_id}`, { inc_votes }).catch((err) => {
+    throw err;
+  });
+};
