@@ -15,3 +15,9 @@ export const fetchSingleArticle = (article_id) => {
     return response.data.article;
   });
 };
+
+export const fetchCommentArticle = (article_id) => {
+  return ncApi.get(`/articles/${article_id}/comments`).then((response) => {
+    return response.data.comments;
+  });
+};

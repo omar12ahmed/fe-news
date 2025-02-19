@@ -1,6 +1,8 @@
 import { useParams } from "react-router";
 import { fetchSingleArticle } from "../../../api";
 import { useEffect, useState } from "react";
+import ArticleSection from "./ArticleSectio";
+import CommentSection from "./CommentSection";
 
 function SingleArticle() {
   const { article_id } = useParams();
@@ -21,14 +23,8 @@ function SingleArticle() {
 
   return (
     <div>
-      <div></div>
-      <h3>{article.title}</h3>
-      <p>{article.body}</p>
-      <p>Topic: {article.topic}</p>
-      <p>Author: {article.author}</p>
-      <p>Created At: {article.created_at}</p>
-      <p>Votes:{article.votes}</p>
-      <p>Article Id: {article_id}</p>
+      <ArticleSection article={article} />
+      <CommentSection article_id={article_id} />
     </div>
   );
 }
