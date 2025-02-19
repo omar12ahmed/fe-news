@@ -1,4 +1,5 @@
 import { Children, useState } from "react";
+import Votes from "./Votes";
 
 function ArticleSection({ article }) {
   return (
@@ -10,11 +11,9 @@ function ArticleSection({ article }) {
       <p>Author: {article.author}</p>
       <p>Created At: {article.created_at}</p>
       <p>Article Id: {article.article_id}</p>
+      <Votes votes={article.votes} />
     </div>
   );
 }
 
 export default ArticleSection;
-
-{
-}

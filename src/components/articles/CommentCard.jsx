@@ -1,6 +1,4 @@
 function CommentCard(comment) {
-  console.log(comment.comment.comment_id);
-
   return (
     <div style={{ border: "solid black 2px" }}>
       <p>{comment.comment.comment_id}</p>
