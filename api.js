@@ -27,3 +27,15 @@ export const patchVotes = (article_id, inc_votes) => {
     throw err;
   });
 };
+
+export const postCommentArticle = (article_id, body, username) => {
+  return ncApi
+    .post(`/articles/${article_id}/comments`, { body, username })
+    .then((response) => {
+      return response.data.newComment;
+    })
+    .catch((err) => {
+      console.dir(err);
+      throw err;
+    });
+};
