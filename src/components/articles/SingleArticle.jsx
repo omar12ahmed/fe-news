@@ -8,12 +8,15 @@ function SingleArticle() {
   const { article_id } = useParams();
   const [article, setIsArticle] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  // const [error, setError] = useState("");
 
   useEffect(() => {
-    fetchSingleArticle(article_id).then((data) => {
-      setIsArticle(data);
-      setIsLoading(false);
-    });
+    fetchSingleArticle(article_id)
+      .then((data) => {
+        setIsArticle(data);
+        setIsLoading(false);
+      })
+      .catch();
   }, [article_id]);
 
   if (isLoading) {
