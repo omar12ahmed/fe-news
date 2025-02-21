@@ -4,10 +4,12 @@ const ncApi = axios.create({
   baseURL: "https://be-nc-news-wl3m.onrender.com/api",
 });
 
-export const fetchArticles = () => {
-  return ncApi.get("/articles").then((response) => {
-    return response.data.articles;
-  });
+export const fetchArticles = (sort_by, order) => {
+  return ncApi
+    .get("/articles", { params: { sort_by: sort_by, order: order } })
+    .then((response) => {
+      return response.data.articles;
+    });
 };
 
 export const fetchSingleArticle = (article_id) => {
@@ -21,6 +23,7 @@ export const fetchCommentArticle = (article_id) => {
     return response.data.comments;
   });
 };
+("lorum ipsum");
 
 export const patchVotes = (article_id, inc_votes) => {
   return ncApi.patch(`/articles/${article_id}`, { inc_votes }).catch((err) => {

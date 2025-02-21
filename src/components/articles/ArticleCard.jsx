@@ -5,7 +5,13 @@ function ArticleCard({ article }) {
     <Link to={`/articles/${article.article_id}`}>
       <div style={{ border: "solid black 2px", marginTop: "40px" }}>
         <h3>{article.title}</h3>
-        <p>{article.author}</p>
+        <p>Author: {article.author}</p>
+        <p>{article.topic}</p>
+        <p>Comments: {article.comment_count}</p>
+        <p>Votes: {article.votes}</p>
+        <p>{article.created_at}</p>
+
+        <p></p>
       </div>
     </Link>
   );
