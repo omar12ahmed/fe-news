@@ -19,9 +19,7 @@ function SingleArticle() {
       .catch((err) => {
         setIsLoading(false);
         const errorCode = err.response.status;
-        if (errorCode === 400) {
-          setError(`${errorCode},  ${err.response.data.msg}`);
-        } else if (errorCode === 404) {
+        if (errorCode) {
           setError(`${errorCode},  ${err.response.data.msg}`);
         }
       });
