@@ -11,6 +11,8 @@ function ArticleList() {
     fetchArticles()
       .then((articlesdata) => {
         setArticles(articlesdata);
+        console.log(articlesdata);
+
         setIsLoading(false);
       })
       .catch((err) => {
