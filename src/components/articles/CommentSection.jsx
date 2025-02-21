@@ -7,7 +7,6 @@ import AddButton from "./AddButton";
 function CommentSection(article_id) {
   const id = article_id.article_id;
   const [comments, setComments] = useState([]);
-  const [newcomments, setNewComments] = useState([]);
 
   useEffect(() => {
     fetchCommentArticle(id).then((comments) => {
@@ -20,9 +19,13 @@ function CommentSection(article_id) {
       <h1>Comments</h1>
       <ul style={{ border: "solid black 2px", marginTop: "40px" }}>
         {comments.map((comment) => {
-          // console.log(comments);
-
-          return <CommentCard key={comment.comment_id} comment={comment} />;
+          return (
+            <CommentCard
+              key={comment.comment_id}
+              comment={comment}
+              setComments={setComments}
+            />
+          );
         })}
       </ul>
       <AddButton setComments={setComments} />

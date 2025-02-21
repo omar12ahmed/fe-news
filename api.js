@@ -33,9 +33,9 @@ export const postCommentArticle = (article_id, body, username) => {
     .post(`/articles/${article_id}/comments`, { body, username })
     .then((response) => {
       return response.data.newComment;
-    })
-    .catch((err) => {
-      console.dir(err);
-      throw err;
     });
+};
+
+export const deleteCommentArticle = (comment_id) => {
+  return ncApi.delete(`/comments/${comment_id}`);
 };
